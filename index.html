@@ -463,6 +463,7 @@
     document.getElementById('b-es').classList.toggle('on',l==='es');
     document.getElementById('b-en').classList.toggle('on',l==='en');
   }
+  (function(){var l=(navigator.language||navigator.userLanguage||'es').toLowerCase();if(l.indexOf('es')!==0){setLang('en');}})();
   function openLic(){document.getElementById('licModal').classList.add('open')}
   function closeLic(){document.getElementById('licModal').classList.remove('open')}
   document.getElementById('licModal').addEventListener('click',function(e){if(e.target===this)closeLic()});
