@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://encsports.com/assets/stadium.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#060B0A;
@@ -212,11 +212,20 @@
   .modal-foot{padding:18px 26px;border-top:1px solid var(--line);font-family:'Archivo',sans-serif;font-size:12px;color:var(--muted);letter-spacing:.05em}
   .modal-foot b{color:var(--grass-soft)}
 
-  [data-en]{display:none}
+  [data-en],[data-ar]{display:none}
+  [data-en-b],[data-ar-b]{display:none}
   body.en [data-es]{display:none}
   body.en [data-en]{display:inline}
   body.en [data-en-b]{display:block}
-  [data-en-b]{display:none}
+  body.ar [data-es]{display:none}
+  body.ar [data-ar]{display:inline}
+  body.ar [data-ar-b]{display:block}
+  /* árabe / RTL */
+  body.ar{direction:rtl}
+  body.ar,body.ar *{font-family:'Cairo','Inter',sans-serif !important;letter-spacing:normal !important}
+  body.ar h1,body.ar h2,body.ar h3,body.ar h4,body.ar .name,body.ar .hv,body.ar .brand b,body.ar .foot-brand b{font-weight:700}
+  body.ar .enc-form{text-align:right}
+  body.ar .foot-meta{text-align:left}
 
   @media(max-width:980px){
     .svc-grid{grid-template-columns:repeat(2,1fr)}
@@ -243,14 +252,14 @@
       <a href="#" class="brand"><img id="logo" alt="ENC"><b>ENC Sports</b></a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="#servicios" data-es>Servicios</a><a href="#servicios" data-en>Services</a>
-          <a href="#nosotros" data-es>Nosotros</a><a href="#nosotros" data-en>About us</a>
-          <a href="#contacto" data-es>Contacto</a><a href="#contacto" data-en>Contact</a>
+          <a href="#servicios" data-es>Servicios</a><a href="#servicios" data-en>Services</a><a href="#servicios" data-ar>الخدمات</a>
+          <a href="#nosotros" data-es>Nosotros</a><a href="#nosotros" data-en>About us</a><a href="#nosotros" data-ar>من نحن</a>
+          <a href="#contacto" data-es>Contacto</a><a href="#contacto" data-en>Contact</a><a href="#contacto" data-ar>تواصل معنا</a>
         </div>
         <div class="lang">
-          <button id="b-es" class="on" onclick="setLang('es')">ES</button><span>/</span><button id="b-en" onclick="setLang('en')">EN</button>
+          <button id="b-es" class="on" onclick="setLang('es')">ES</button><span>/</span><button id="b-en" onclick="setLang('en')">EN</button><span>/</span><button id="b-ar" onclick="setLang('ar')">AR</button>
         </div>
-        <a href="#contacto" class="nav-cta" data-es>Trabajá con nosotros</a><a href="#contacto" class="nav-cta" data-en>Work with us</a>
+        <a href="#contacto" class="nav-cta" data-es>Trabajá con nosotros</a><a href="#contacto" class="nav-cta" data-en>Work with us</a><a href="#contacto" class="nav-cta" data-ar>اعمل معنا</a>
       </div>
     </nav>
   </div>
@@ -265,11 +274,12 @@
       <h1>
         <span data-es>Donde el fútbol<br>hace <span class="grass">negocios</span></span>
         <span data-en-b>Where football<br>does <span class="grass">business</span></span>
+        <span data-ar-b>حيث تصنع كرة القدم<br><span class="grass">الأعمال</span></span>
       </h1>
       <div class="hero-cta-row">
-        <a href="#servicios" class="btn-fill"><span data-es>Qué hacemos</span><span data-en>What we do</span>
+        <a href="#servicios" class="btn-fill"><span data-es>Qué hacemos</span><span data-en>What we do</span><span data-ar>ماذا نقدّم</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#contacto" class="btn-out"><span data-es>Hablemos</span><span data-en>Get in touch</span></a>
+        <a href="#contacto" class="btn-out"><span data-es>Hablemos</span><span data-en>Get in touch</span><span data-ar>لنتحدّث</span></a>
       </div>
     </div>
   </div>
@@ -278,10 +288,11 @@
 <!-- WHO -->
 <section class="who">
   <div class="wrap">
-    <div class="lbl"><span data-es>Quiénes somos</span><span data-en>Who we are</span></div>
+    <div class="lbl"><span data-es>Quiénes somos</span><span data-en>Who we are</span><span data-ar>من نحن</span></div>
     <h2>
       <span data-es>Agencia de representación y negocios deportivos. <span class="dim">Donde la experiencia se convierte en resultados.</span></span>
       <span data-en-b>A sports representation and business agency. <span class="dim">Where experience turns into results.</span></span>
+      <span data-ar-b>وكالة لتمثيل اللاعبين والأعمال الرياضية. <span class="dim">حيث تتحول الخبرة إلى نتائج.</span></span>
     </h2>
   </div>
 </section>
@@ -290,62 +301,62 @@
 <section class="services" id="servicios">
   <div class="wrap">
     <div class="svc-top">
-      <h3><span data-es>Lo que <span class="grass">hacemos</span></span><span data-en>What we <span class="grass">do</span></span></h3>
-      <p><span data-es>Acompañamiento integral, dentro y fuera de la cancha. Trabajamos como un solo equipo.</span><span data-en>Full-circle support, on and off the pitch. We work as one team.</span></p>
+      <h3><span data-es>Lo que <span class="grass">hacemos</span></span><span data-en>What we <span class="grass">do</span></span><span data-ar>ما <span class="grass">نقدّمه</span></span></h3>
+      <p><span data-es>Acompañamiento integral, dentro y fuera de la cancha. Trabajamos como un solo equipo.</span><span data-en>Full-circle support, on and off the pitch. We work as one team.</span><span data-ar>مرافقة متكاملة داخل الملعب وخارجه. نعمل كفريق واحد.</span></p>
     </div>
     <div class="svc-grid">
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Representación</div><div class="tag" data-en>Representation</div>
-          <div class="name"><span data-es>Contratos</span><span data-en>Contracts</span></div>
-          <div class="desc"><span data-es>Negociación y gestión de contratos para jugadores y entrenadores.</span><span data-en>Contract negotiation and management for players and coaches.</span></div>
+          <div class="tag" data-es>Representación</div><div class="tag" data-en>Representation</div><div class="tag" data-ar>التمثيل</div>
+          <div class="name"><span data-es>Contratos</span><span data-en>Contracts</span><span data-ar>العقود</span></div>
+          <div class="desc"><span data-es>Negociación y gestión de contratos para jugadores y entrenadores.</span><span data-en>Contract negotiation and management for players and coaches.</span><span data-ar>التفاوض على العقود وإدارتها للاعبين والمدربين.</span></div>
         </div>
       </div>
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 014 9 14 14 0 01-4 9 14 14 0 01-4-9 14 14 0 014-9z"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Intermediación FIFA</div><div class="tag" data-en>FIFA intermediation</div>
-          <div class="name"><span data-es>Transferencias</span><span data-en>Transfers</span></div>
-          <div class="desc"><span data-es>Negocios entre clubes a nivel internacional, con licencia FIFA vigente.</span><span data-en>International club deals, with an active FIFA license.</span></div>
+          <div class="tag" data-es>Intermediación FIFA</div><div class="tag" data-en>FIFA intermediation</div><div class="tag" data-ar>وساطة فيفا</div>
+          <div class="name"><span data-es>Transferencias</span><span data-en>Transfers</span><span data-ar>الانتقالات</span></div>
+          <div class="desc"><span data-es>Negocios entre clubes a nivel internacional, con licencia FIFA vigente.</span><span data-en>International club deals, with an active FIFA license.</span><span data-ar>صفقات دولية بين الأندية، برخصة فيفا سارية.</span></div>
         </div>
       </div>
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 8h6zM17 7l-3 8h6z"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Derecho deportivo</div><div class="tag" data-en>Sports law</div>
-          <div class="name"><span data-es>Legal</span><span data-en>Legal</span></div>
-          <div class="desc"><span data-es>Asesoría jurídica especializada en cada aspecto de la carrera.</span><span data-en>Specialized legal counsel on every aspect of the career.</span></div>
+          <div class="tag" data-es>Derecho deportivo</div><div class="tag" data-en>Sports law</div><div class="tag" data-ar>القانون الرياضي</div>
+          <div class="name"><span data-es>Legal</span><span data-en>Legal</span><span data-ar>الشؤون القانونية</span></div>
+          <div class="desc"><span data-es>Asesoría jurídica especializada en cada aspecto de la carrera.</span><span data-en>Specialized legal counsel on every aspect of the career.</span><span data-ar>استشارات قانونية متخصصة في كل جوانب المسيرة.</span></div>
         </div>
       </div>
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 21V10h4v11M10 21V4h4v17M16 21v-7h4v7"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Desarrollo de marca</div><div class="tag" data-en>Brand development</div>
-          <div class="name"><span data-es>Marketing</span><span data-en>Marketing</span></div>
-          <div class="desc"><span data-es>Imagen, marca y negocios para potenciar el valor comercial.</span><span data-en>Image, brand and business to grow commercial value.</span></div>
+          <div class="tag" data-es>Desarrollo de marca</div><div class="tag" data-en>Brand development</div><div class="tag" data-ar>تطوير العلامة</div>
+          <div class="name"><span data-es>Marketing</span><span data-en>Marketing</span><span data-ar>التسويق</span></div>
+          <div class="desc"><span data-es>Imagen, marca y negocios para potenciar el valor comercial.</span><span data-en>Image, brand and business to grow commercial value.</span><span data-ar>الصورة والعلامة والأعمال لتعزيز القيمة التجارية.</span></div>
         </div>
       </div>
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Alto rendimiento</div><div class="tag" data-en>High performance</div>
-          <div class="name"><span data-es>Salud</span><span data-en>Health</span></div>
-          <div class="desc"><span data-es>Red de profesionales de la salud y nutrición deportiva.</span><span data-en>Network of health and sports-nutrition professionals.</span></div>
+          <div class="tag" data-es>Alto rendimiento</div><div class="tag" data-en>High performance</div><div class="tag" data-ar>الأداء العالي</div>
+          <div class="name"><span data-es>Salud</span><span data-en>Health</span><span data-ar>الصحة</span></div>
+          <div class="desc"><span data-es>Red de profesionales de la salud y nutrición deportiva.</span><span data-en>Network of health and sports-nutrition professionals.</span><span data-ar>شبكة من خبراء الصحة والتغذية الرياضية.</span></div>
         </div>
       </div>
 
       <div class="svc-card">
         <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <div class="svc-body">
-          <div class="tag" data-es>Carrera</div><div class="tag" data-en>Career</div>
-          <div class="name"><span data-es>Desarrollo</span><span data-en>Development</span></div>
-          <div class="desc"><span data-es>Proyección y crecimiento profesional, personal y familiar.</span><span data-en>Professional, personal and family growth and projection.</span></div>
+          <div class="tag" data-es>Carrera</div><div class="tag" data-en>Career</div><div class="tag" data-ar>المسيرة</div>
+          <div class="name"><span data-es>Desarrollo</span><span data-en>Development</span><span data-ar>التطوير</span></div>
+          <div class="desc"><span data-es>Proyección y crecimiento profesional, personal y familiar.</span><span data-en>Professional, personal and family growth and projection.</span><span data-ar>تطوّر ونمو على الصعيد المهني والشخصي والعائلي.</span></div>
         </div>
       </div>
 
@@ -357,9 +368,9 @@
 <section class="team" id="nosotros">
   <div class="wrap">
     <div class="team-intro">
-      <div class="lbl"><span data-es>Nosotros</span><span data-en>About us</span></div>
-      <h3><span data-es>Un <span class="grass">equipo</span> que vivió el fútbol desde adentro</span><span data-en>A <span class="grass">team</span> that lived football from within</span></h3>
-      <p><span data-es>No representamos desde un escritorio. Conocemos la cancha, el vestuario y la mesa de negociación. Por eso entendemos lo que está en juego.</span><span data-en>We don't represent from a desk. We know the pitch, the locker room and the negotiating table. That's why we understand what's at stake.</span></p>
+      <div class="lbl"><span data-es>Nosotros</span><span data-en>About us</span><span data-ar>من نحن</span></div>
+      <h3><span data-es>Un <span class="grass">equipo</span> que vivió el fútbol desde adentro</span><span data-en>A <span class="grass">team</span> that lived football from within</span><span data-ar><span class="grass">فريق</span> عاش كرة القدم من الداخل</span></h3>
+      <p><span data-es>No representamos desde un escritorio. Conocemos la cancha, el vestuario y la mesa de negociación. Por eso entendemos lo que está en juego.</span><span data-en>We don't represent from a desk. We know the pitch, the locker room and the negotiating table. That's why we understand what's at stake.</span><span data-ar>نحن لا نمثّل من خلف مكتب. نعرف الملعب وغرفة الملابس وطاولة المفاوضات. لذلك نفهم ما هو على المحك.</span></p>
     </div>
 
     <!-- Emilio - destacado -->
@@ -368,21 +379,23 @@
         <img class="photo" src="assets/emilio.jpg" alt="Emilio Commisso">
       </div>
       <div class="leader-info">
-        <div class="leader-role" data-es>CEO &amp; Socio Fundador</div><div class="leader-role" data-en>CEO &amp; Founding Partner</div>
+        <div class="leader-role" data-es>CEO &amp; Socio Fundador</div><div class="leader-role" data-en>CEO &amp; Founding Partner</div><div class="leader-role" data-ar>الرئيس التنفيذي والشريك المؤسس</div>
         <h4>Emilio "Nene"<br>Commisso</h4>
-        <div class="leader-tagline" data-es>El cerebro de todo. Experiencia que no se compra.</div><div class="leader-tagline" data-en>The mind behind it all. Experience that can't be bought.</div>
+        <div class="leader-tagline" data-es>El cerebro de todo. Experiencia que no se compra.</div><div class="leader-tagline" data-en>The mind behind it all. Experience that can't be bought.</div><div class="leader-tagline" data-ar>العقل المدبّر وراء كل شيء. خبرة لا تُشترى.</div>
         <p data-es><b>Leyenda del fútbol argentino.</b> Jugó siete años en River Plate, donde ganó cinco títulos de liga en 218 partidos. En Argentinos Juniors vivió la época dorada del club: campeón de la <b>Copa Libertadores 1985</b> y la Copa Interamericana, y disputó la Copa Intercontinental ante la Juventus.</p>
         <p data-en><b>An Argentine football legend.</b> He spent seven years at River Plate, winning five league titles across 218 matches. At Argentinos Juniors he lived the club's golden era: <b>1985 Copa Libertadores</b> and Copa Interamericana champion, and played the Intercontinental Cup against Juventus.</p>
+        <p data-ar><b>أسطورة كرة القدم الأرجنتينية.</b> لعب سبع سنوات مع ريفر بليت، حيث توّج بخمسة ألقاب في الدوري خلال 218 مباراة. ومع أرخنتينوس خونيورز عاش العصر الذهبي للنادي: بطل <b>كأس ليبرتادوريس 1985</b> والكأس الأمريكية، وخاض كأس إنتركونتيننتال أمام يوفنتوس.</p>
         <p data-es>Tras su retiro fue entrenador, director deportivo de Racing, DT de Talleres y Director de Deportes de la Municipalidad de Córdoba. Hoy lidera ENC con esa mirada integral: la del jugador, el técnico y el dirigente.</p>
         <p data-en>After retiring he became a coach, sporting director at Racing, manager of Talleres and Director of Sports for the City of Córdoba. Today he leads ENC with that 360° perspective: player, coach and executive.</p>
+        <p data-ar>بعد اعتزاله أصبح مدرباً، ومديراً رياضياً لراسينغ، ومدرباً لتاييريس، ومديراً للرياضة في بلدية قرطبة. واليوم يقود ENC بنظرة شاملة: نظرة اللاعب والمدرب والإداري.</p>
         <div class="honors">
-          <div class="honor"><div class="hv">5</div><div class="hk" data-es>Títulos con River</div><div class="hk" data-en>Titles with River</div></div>
-          <div class="honor"><div class="hv">'85</div><div class="hk" data-es>Copa Libertadores</div><div class="hk" data-en>Copa Libertadores</div></div>
-          <div class="honor"><div class="hv">360°</div><div class="hk" data-es>Jugador · DT · Dirigente</div><div class="hk" data-en>Player · Coach · Exec</div></div>
+          <div class="honor"><div class="hv">5</div><div class="hk" data-es>Títulos con River</div><div class="hk" data-en>Titles with River</div><div class="hk" data-ar>ألقاب مع ريفر</div></div>
+          <div class="honor"><div class="hv">'85</div><div class="hk" data-es>Copa Libertadores</div><div class="hk" data-en>Copa Libertadores</div><div class="hk" data-ar>كأس ليبرتادوريس</div></div>
+          <div class="honor"><div class="hv">360°</div><div class="hk" data-es>Jugador · DT · Dirigente</div><div class="hk" data-en>Player · Coach · Exec</div><div class="hk" data-ar>لاعب · مدرب · إداري</div></div>
         </div>
         <a href="https://www.linkedin.com/in/emilio-nene-commisso/" target="_blank" rel="noopener" class="link-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-          <span data-es>Ver perfil en LinkedIn</span><span data-en>View LinkedIn profile</span>
+          <span data-es>Ver perfil en LinkedIn</span><span data-en>View LinkedIn profile</span><span data-ar>عرض الملف على لينكدإن</span>
         </a>
       </div>
     </div>
@@ -392,13 +405,14 @@
       <div class="member">
         <div class="member-photo"><img class="mphoto" src="assets/martin.jpg" alt="Martín Aimar"></div>
         <div class="member-info">
-          <div class="member-role" data-es>Desarrollo de Marca &amp; Marketing</div><div class="member-role" data-en>Brand Development &amp; Marketing</div>
+          <div class="member-role" data-es>Desarrollo de Marca &amp; Marketing</div><div class="member-role" data-en>Brand Development &amp; Marketing</div><div class="member-role" data-ar>تطوير العلامة والتسويق</div>
           <h4>Martín Aimar</h4>
           <p data-es>Impulsa el negocio. Lidera el desarrollo de marca, marketing e intermediación, conectando a ENC con clubes e instituciones. <b>Agente FIFA con licencia vigente.</b></p>
           <p data-en>Drives the business. Leads brand development, marketing and intermediation, connecting ENC with clubs and institutions. <b>Licensed FIFA Agent.</b></p>
+          <p data-ar>محرّك الأعمال. يقود تطوير العلامة والتسويق والوساطة، ويربط ENC بالأندية والمؤسسات. <b>وكيل فيفا برخصة سارية.</b></p>
           <button class="link-btn" onclick="openLic()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-            <span data-es>Ver licencia FIFA</span><span data-en>View FIFA license</span>
+            <span data-es>Ver licencia FIFA</span><span data-en>View FIFA license</span><span data-ar>عرض رخصة فيفا</span>
           </button>
         </div>
       </div>
@@ -406,10 +420,11 @@
       <div class="member">
         <div class="member-photo"><img class="mphoto" src="assets/nicolas.jpg" alt="Nicolás Tapia"></div>
         <div class="member-info">
-          <div class="member-role" data-es>Legal &amp; Contratos</div><div class="member-role" data-en>Legal &amp; Contracts</div>
+          <div class="member-role" data-es>Legal &amp; Contratos</div><div class="member-role" data-en>Legal &amp; Contracts</div><div class="member-role" data-ar>الشؤون القانونية والعقود</div>
           <h4>Nicolás Tapia</h4>
           <p data-es>Abogado y socio fundador. Conduce el área legal y contractual de ENC, garantizando que cada acuerdo se cierre con respaldo jurídico, transparencia y seguridad.</p>
           <p data-en>Lawyer and founding partner. Leads ENC's legal and contractual area, ensuring every deal closes with legal backing, transparency and security.</p>
+          <p data-ar>محامٍ وشريك مؤسس. يقود المجال القانوني والتعاقدي في ENC، ويضمن إتمام كل اتفاق بسند قانوني وشفافية وأمان.</p>
         </div>
       </div>
     </div>
@@ -419,21 +434,21 @@
 <!-- END CTA -->
 <section class="endcta" id="contacto">
   <div class="wrap">
-    <h2><span data-es>Hablemos</span><span data-en-b>Let's talk</span></h2>
-    <p><span data-es>Si el fútbol es tu negocio, ENC es tu socio.</span><span data-en>If football is your business, ENC is your partner.</span></p>
+    <h2><span data-es>Hablemos</span><span data-en-b>Let's talk</span><span data-ar-b>لنتحدّث</span></h2>
+    <p><span data-es>Si el fútbol es tu negocio, ENC es tu socio.</span><span data-en>If football is your business, ENC is your partner.</span><span data-ar>إذا كانت كرة القدم عملك، فإن ENC شريكك.</span></p>
     <form class="enc-form" id="contactForm" action="https://formspree.io/f/meebevzk" method="POST">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_subject" value="Nuevo contacto desde encsports.com">
       <div class="field">
-        <label><span data-es>Nombre y apellido o empresa</span><span data-en>Full name or company</span></label>
+        <label><span data-es>Nombre y apellido o empresa</span><span data-en>Full name or company</span><span data-ar>الاسم الكامل أو الشركة</span></label>
         <input type="text" name="Nombre / Empresa" required>
       </div>
       <div class="field">
-        <label><span data-es>Correo</span><span data-en>Email</span></label>
+        <label><span data-es>Correo</span><span data-en>Email</span><span data-ar>البريد الإلكتروني</span></label>
         <input type="email" name="email" required>
       </div>
       <div class="field">
-        <label><span data-es>Soy</span><span data-en>I am a</span></label>
+        <label><span data-es>Soy</span><span data-en>I am a</span><span data-ar>أنا</span></label>
         <select name="Tipo de contacto" id="tipoSelect" required>
           <option value="" disabled selected></option>
           <option value="Club">Club</option>
@@ -443,13 +458,13 @@
         </select>
       </div>
       <div class="field">
-        <label><span data-es>Mensaje</span><span data-en>Message</span></label>
+        <label><span data-es>Mensaje</span><span data-en>Message</span><span data-ar>الرسالة</span></label>
         <textarea name="Mensaje" required></textarea>
       </div>
-      <button type="submit" class="submit"><span data-es>Enviar</span><span data-en>Send</span></button>
+      <button type="submit" class="submit"><span data-es>Enviar</span><span data-en>Send</span><span data-ar>إرسال</span></button>
     </form>
-    <div class="form-ok" id="formOk"><span data-es>¡Gracias! Recibimos tu mensaje y te respondemos a la brevedad.</span><span data-en>Thank you! We've received your message and will reply shortly.</span></div>
-    <p class="form-alt"><span data-es>O escribinos por</span><span data-en>Or message us on</span> <a href="https://wa.me/543532490599?text=Hola%20ENC%20Sports%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a></p>
+    <div class="form-ok" id="formOk"><span data-es>¡Gracias! Recibimos tu mensaje y te respondemos a la brevedad.</span><span data-en>Thank you! We've received your message and will reply shortly.</span><span data-ar>شكراً! استلمنا رسالتك وسنردّ عليك قريباً.</span></div>
+    <p class="form-alt"><span data-es>O escribinos por</span><span data-en>Or message us on</span><span data-ar>أو راسلنا عبر</span> <a href="https://wa.me/543532490599?text=Hola%20ENC%20Sports%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a></p>
   </div>
 </section>
 
@@ -478,13 +493,14 @@
 <div class="modal" id="licModal">
   <div class="modal-box">
     <div class="modal-head">
-      <span class="mt"><span data-es>Licencia FIFA</span><span data-en>FIFA License</span></span>
+      <span class="mt"><span data-es>Licencia FIFA</span><span data-en>FIFA License</span><span data-ar>رخصة فيفا</span></span>
       <button class="modal-close" onclick="closeLic()">&times;</button>
     </div>
     <img id="licImg" alt="Licencia FIFA Martín Aimar">
     <div class="modal-foot">
       <span data-es>Martín Alberto Aimar · Estado: <b>VÁLIDA</b> · N.º <b>202412-9890</b> · <a href="assets/licencia-fifa-martin-aimar.pdf" download style="color:var(--grass-soft)">Descargar PDF</a></span>
       <span data-en>Martín Alberto Aimar · Status: <b>VALID</b> · No. <b>202412-9890</b> · <a href="assets/licencia-fifa-martin-aimar.pdf" download style="color:var(--grass-soft)">Download PDF</a></span>
+      <span data-ar>مارتين ألبرتو أيمار · الحالة: <b>سارية</b> · رقم <b>202412-9890</b> · <a href="assets/licencia-fifa-martin-aimar.pdf" download style="color:var(--grass-soft)">تحميل PDF</a></span>
     </div>
   </div>
 </div>
@@ -498,18 +514,21 @@
   function applyFormLang(l){
     var sel=document.getElementById('tipoSelect');
     if(!sel)return;
-    var t=(l==='en')?['Select…','Club','Player','Coach','Business']:['Seleccioná…','Club','Jugador','Entrenador','Empresario'];
+    var t=(l==='en')?['Select…','Club','Player','Coach','Business']:(l==='ar')?['اختر…','نادٍ','لاعب','مدرب','رجل أعمال']:['Seleccioná…','Club','Jugador','Entrenador','Empresario'];
     for(var i=0;i<sel.options.length&&i<t.length;i++){sel.options[i].text=t[i];}
   }
   function setLang(l){
     document.body.classList.toggle('en',l==='en');
+    document.body.classList.toggle('ar',l==='ar');
     document.documentElement.lang=l;
+    document.documentElement.dir=(l==='ar')?'rtl':'ltr';
     document.getElementById('b-es').classList.toggle('on',l==='es');
     document.getElementById('b-en').classList.toggle('on',l==='en');
+    document.getElementById('b-ar').classList.toggle('on',l==='ar');
     applyFormLang(l);
   }
-  (function(){var l=(navigator.language||navigator.userLanguage||'es').toLowerCase();if(l.indexOf('es')!==0){setLang('en');}})();
-  applyFormLang(document.body.classList.contains('en')?'en':'es');
+  (function(){var l=(navigator.language||navigator.userLanguage||'es').toLowerCase();if(l.indexOf('ar')===0){setLang('ar');}else if(l.indexOf('es')!==0){setLang('en');}})();
+  applyFormLang(document.documentElement.lang);
   (function(){var f=document.getElementById('contactForm');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('.submit');b.disabled=true;fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){f.style.display='none';document.getElementById('formOk').classList.add('show');}else{b.disabled=false;alert('Hubo un error. Probá de nuevo o escribinos por WhatsApp.');}}).catch(function(){b.disabled=false;alert('Hubo un error. Probá de nuevo o escribinos por WhatsApp.');});});})();
   function openLic(){document.getElementById('licModal').classList.add('open')}
   function closeLic(){document.getElementById('licModal').classList.remove('open')}
